@@ -1,3 +1,32 @@
+<!--
+This page consists of a form where the user can enter:
+    * their first name
+    * their last name
+    * student number
+    * answers to at least 5 questions related to your topic
+
+The questions should use 5 different input types:
+    1. A text input question
+    2. A multi choice question with one correct answer (radio button group)
+    3. A multi choice question with multiple correct answers (check box group)
+    4. A drop list with a single correct answer
+    5. An input type of your choice other than the above
+        eg: number, range, text area, image map, etc
+
+Fieldsets and legends should be used appropriately to group inputs into questions
+
+Labels and inputs should be linked with a for attribute
+
+Before quiz answers are submitted HTML5 data validation should be used to check the following:
+    * text and radio input questions must be answered
+    * name and student id fields are not empty
+    * the first and last name data should be checked to ensure it only consists of
+        alpha chars, hyphens or spaces. A maximum of 25 characters.
+    * the student number is either 7 or 10 digits
+
+You must make a POST request to the provided server which will simply echo the
+key value pairs back
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
