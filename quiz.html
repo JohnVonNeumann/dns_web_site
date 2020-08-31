@@ -1,32 +1,3 @@
-<!--
-This page consists of a form where the user can enter:
-    * their first name
-    * their last name
-    * student number
-    * answers to at least 5 questions related to your topic
-
-The questions should use 5 different input types:
-    1. A text input question
-    2. A multi choice question with one correct answer (radio button group)
-    3. A multi choice question with multiple correct answers (check box group)
-    4. A drop list with a single correct answer
-    5. An input type of your choice other than the above
-        eg: number, range, text area, image map, etc.
-
-Fieldsets and legends should be used appropriately to group inputs into questions
-
-Labels and inputs should be linked with a for attribute
-
-Before quiz answers are submitted HTML5 data validation should be used to check the following:
-    * text and radio input questions must be answered
-    * name and student id fields are not empty
-    * the first and last name data should be checked to ensure it only consists of
-        alpha chars, hyphens or spaces. A maximum of 25 characters.
-    * the student number is either 7 or 10 digits
-
-You must make a POST request to the provided server which will simply echo the
-key value pairs back
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,15 +36,15 @@ key value pairs back
                                 <legend> <h2>Personal Details: </h2> </legend>
                                 <p>
                                         <label for="first_name"> First name: </label>
-                                        <input type="text" name="first_name" id="first_name" required="required"/>
+                                        <input type="text" name="first_name" id="first_name" required="required" pattern="[a-zA-Z-\s]{1,25}"/>
                                 </p>
                                 <p>
                                         <label for="last_name"> Last name: </label>
-                                        <input type="text" name="last_name" id="last_name" required="required"/>
+                                        <input type="text" name="last_name" id="last_name" required="required" pattern="[a-zA-Z-\s]{1,25}"/>
                                 </p>
                                 <p>
                                         <label for="student_number"> Student ID Number: </label>
-                                        <input type="number" name="student_number" id="student_number" required="required"/>
+                                        <input type="text" name="student_number" id="student_number" required="required" pattern="^(\d{7}|\d{10})$"/>
                                 </p>
                         </fieldset>
                         <fieldset>
@@ -86,7 +57,7 @@ key value pairs back
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> <h3> Question 2: What is the purpose of DNS? </h3> </legend>
+                                        <legend> Question 2: What is the purpose of DNS? </legend>
                                         <p>
                                                 <label for="question_2_answer_1"> It routes packets from one host to another. </label>
                                                 <input type="radio" id="question_2_answer_1" name="question_2" value="It routes packets from one host to another." required="required"/> <br>
@@ -99,7 +70,7 @@ key value pairs back
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> <h3> Question 3: Which two IETF RFC's first introduced DNS? </h3> </legend>
+                                        <legend> Question 3: Which two IETF RFC's first introduced DNS? </legend>
                                         <p>
                                                 <label for="question_3_answer_1"> RFC 1034 </label>
                                                 <input type="checkbox" id="question_3_answer_1" name="question_3_answer_1" value="RFC 1034"/><br>
@@ -110,7 +81,7 @@ key value pairs back
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> <h3> Question 4: Are DNS requests encrypted by default? </h3> </legend>
+                                        <legend> Question 4: Are DNS requests encrypted by default? </legend>
                                         <p>
                                                 <label for="question_4"> Answer: </label>
                                                 <select id="question_4" name="question_4" required>
@@ -121,14 +92,14 @@ key value pairs back
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> <h3> Question 5: What month and year was the first RFC on DNS published? </h3> </legend>
+                                        <legend> Question 5: What month and year was the first RFC on DNS published? (Day date doesn't matter)</legend>
                                         <p>
                                                 <label for="question_5"> Date: </label>
                                                 <input type="date" id="question_5" name="question_4" required="required"/>
                                         </p>
                                 </fieldset>
-                                <input type="submit" value="Submit"/>
                         </fieldset>
+                        <input type="submit" value="Submit"/>
                 </form>
         </main>
 
