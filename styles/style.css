@@ -12,11 +12,36 @@ body {
     padding: 30px;
 }
 
-main {
-    color: white;
+#topic-image {
+    width: 100%;
 }
 
-article {
+#topic-banner {
+    margin-bottom: 50px;
+}
+
+main {
+    color: white;
+    margin: 0 auto;
+    border: 5px;
+    width: 75%;
+    text-align: center;
+    background-color: grey;
+    box-shadow: 0 0 5px 0 black;
+    padding: 20px;
+}
+
+aside {
+    margin: 0 auto;
+    border: 5px;
+    width: 75%;
+    text-align: center;
+    background-color: grey;
+    box-shadow: 0 0 5px 0 black;
+    padding: 20px;
+}
+
+article, section {
     margin: 0 auto;
     border: 5px;
     width: 75%;
@@ -72,26 +97,35 @@ form {
     margin-bottom: 50px;
 }
 
-form fieldset{
+form fieldset {
     margin: 0 auto;
     border: 5px;
-    width: 75%;
+    width: 80%;
     text-align: center;
     background-color: grey;
     box-shadow: 0 0 5px 0 black;
     padding: 20px;
 }
 
-form fieldset legend h2 {
+h1 {
+    font-size: 40px;
+    border: 7px grey;
+    border-style: solid;
+    box-shadow: 0 0 7px 0 black;
+    background-color: #4e4e50;
+    height: 45px;
+}
+
+h2 {
     font-size: 30px;
     border: 5px grey;
     border-style: solid;
     box-shadow: 0 0 5px 0 black;
-    background-color: #4E4E50;
+    background-color: #4e4e50;
     height: 35px;
 }
 
-form fieldset legend h3 {
+h3 {
     font-size: 20px;
     border: 3px grey;
     border-style: solid;

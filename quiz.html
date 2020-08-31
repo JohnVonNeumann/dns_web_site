@@ -44,6 +44,7 @@
                                 </p>
                                 <p>
                                         <label for="student_number"> Student ID Number: </label>
+                                        <!-- https://stackoverflow.com/questions/39566125/html5-form-pattern-for-7-or-10-numbers-only -->
                                         <input type="text" name="student_number" id="student_number" required="required" pattern="^(\d{7}|\d{10})$"/>
                                 </p>
                         </fieldset>
@@ -57,7 +58,7 @@
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> Question 2: What is the purpose of DNS? </legend>
+                                        <legend> <h3> Question 2: What is the purpose of DNS? </h3> </legend>
                                         <p>
                                                 <label for="question_2_answer_1"> It routes packets from one host to another. </label>
                                                 <input type="radio" id="question_2_answer_1" name="question_2" value="It routes packets from one host to another." required="required"/> <br>
@@ -70,7 +71,7 @@
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> Question 3: Which two IETF RFC's first introduced DNS? </legend>
+                                        <legend> <h3> Question 3: Which two IETF RFC's first introduced DNS? </h3> </legend>
                                         <p>
                                                 <label for="question_3_answer_1"> RFC 1034 </label>
                                                 <input type="checkbox" id="question_3_answer_1" name="question_3_answer_1" value="RFC 1034"/><br>
@@ -81,7 +82,7 @@
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> Question 4: Are DNS requests encrypted by default? </legend>
+                                        <legend> <h3> Question 4: Are DNS requests encrypted by default? </h3> </legend>
                                         <p>
                                                 <label for="question_4"> Answer: </label>
                                                 <select id="question_4" name="question_4" required>
@@ -92,7 +93,7 @@
                                         </p>
                                 </fieldset>
                                 <fieldset>
-                                        <legend> Question 5: What month and year was the first RFC on DNS published? (Day date doesn't matter)</legend>
+                                        <legend> <h3> Question 5: What month and year was the first RFC on DNS published?</h3> </legend>
                                         <p>
                                                 <label for="question_5"> Date: </label>
                                                 <input type="date" id="question_5" name="question_4" required="required"/>
