@@ -5,5 +5,41 @@ created: 18.08.2020
 description: used throughout all the pages  */
 
 body {
-    background-image: url("../imp.jpeg")
+    /* https://css-tricks.com/css3-gradients/ */
+    background-image:
+        linear-gradient(
+            to right,
+            #1A1A1D,
+            #1A1A1D 15%,
+            #E3E2DF 15%,
+            #E3E2DF 85%,
+            #1A1A1D 85%
+            );
+    /* background-image: url("images/imp.jpeg"); */
+    background-size: cover;
+}
+
+.menu {
+    background-color: #4E4E50;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    color: white;
+}
+
+ul>li>a {
+    color: white;
+}
+
+header * {
+    display: inline;
+}
+
+body {
+    font-family: sans-serif;
 }
