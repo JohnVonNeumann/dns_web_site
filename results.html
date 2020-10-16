@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> DNS - Quiz </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="DNS Web Site - Quiz">
+    <meta name="keywords" content="dns, quiz">
+    <meta name="author" content="JohnVonNeumann">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/quiz.js"></script>
+</head>
+<!--
+Requirements:
+* The username and id
+* The score achieved for this attempt
+* The number of attempts the user has made doing the quiz using heir browser
+* A hyperlink that allows them to have another attempt at the quiz (only if theyve had less than 3 attempts)
+* the maximum number of attempts a user (identified by their id) cna make is three
+        You need to implement a way to prevent th use doing the quiz more than 3 times. 
+-->
+
+<body>
+
+    <header>
+        <nav class="menu">
+            <ul>
+                <li class="menu-items">
+                    <a id="index-link" href="index.html"> Home </a>
+                </li>
+                <li class="menu-items">
+                    <a id="topic-link" href="topic.html"> Topic </a>
+                </li>
+                <li class="menu-items">
+                    <a id="enhancements" href="enhancements.html"> Enhancements </a>
+                </li>
+                <li class="menu-items">
+                    <a id="quiz-link" href="quiz.html"> Quiz </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p id="answers"> </p>
+        <section>
+            <h3>Results</h3>
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Student ID</th>
+                        <th>Score</th>
+                        <th>Attempts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="table-data-name"> </td>
+                        <td id="table-data-student-id"> </td>
+                        <td id="table-data-score"> </td>
+                        <td id="table-data-attempts"> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="quiz-reattempt"><a href="quiz.html">Reattempt Quiz!</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- TODO: replace with legit email address -->
+        <p><a href="yourmum@yournan.lol.meme">yourmum@yournan.lol.meme</a></p>
+    </footer>
+</body>
+
+</html>
