@@ -7,7 +7,7 @@
 'use strict';
 
 function init() {
-    // handle both the quiz.html and results.html
+    // handle both the quiz.php and results.html
     var quizForm;
     if (quizForm = document.getElementById("quiz")) {
         quizForm.onsubmit = validate;

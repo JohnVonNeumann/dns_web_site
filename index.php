@@ -27,16 +27,16 @@ This page should contain:
                 <nav class="menu">
                         <ul>
                                 <li class="menu-items">
-                                        <a id="index-link" href="index.html"> Home </a>
+                                        <a id="index-link" href="index.php"> Home </a>
                                 </li>
                                 <li class="menu-items">
-                                        <a id="topic-link" href="topic.html"> Topic </a>
+                                        <a id="topic-link" href="topic.php"> Topic </a>
                                 </li>
                                 <li class="menu-items">
                                         <a id="enhancements" href="enhancements.html"> Enhancements </a>
                                 </li>
                                 <li class="menu-items">
-                                        <a id="quiz" href="quiz.html"> Quiz </a>
+                                        <a id="quiz" href="quiz.php"> Quiz </a>
                                 </li>
                         </ul>
                 </nav>
