@@ -1,47 +1,4 @@
-<!---
-This page should contain:
-•An appropriate title
-•A background graphic(use CSS to do this)
-•A menu that links to the other pages on your Web site.
-	This menu should appear on every page of your website.
-•A header containing appropriate content.
-	This header should appear on every page of your website.
-•A footer that includes an email hyperlink to your student email address.
-	This footer should appear on every page of your website
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <title> DNS - Welcome</title>
-        <meta charset="UTF-8">
-		<meta name="description" content="DNS Web Site - Index">
-		<meta name="keywords" content="DNS">
-		<meta name="author" content="JohnVonNeumann">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="styles/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-        <header>
-                <nav class="menu">
-                        <ul>
-                                <li class="menu-items">
-                                        <a id="index-link" href="index.php"> Home </a>
-                                </li>
-                                <li class="menu-items">
-                                        <a id="topic-link" href="topic.php"> Topic </a>
-                                </li>
-                                <li class="menu-items">
-                                        <a id="enhancements" href="enhancements.html"> Enhancements </a>
-                                </li>
-                                <li class="menu-items">
-                                        <a id="quiz" href="quiz.php"> Quiz </a>
-                                </li>
-                        </ul>
-                </nav>
-        </header>
-
+<?php include("header.inc"); ?>
         <main>
                 <article>
                         <h1> DNS </h1>
@@ -65,10 +22,21 @@ This page should contain:
 
         </main>
 
-        <footer>
-                <!-- TODO: replace with legit email address -->
-                <p><a href="mailto:yourmum@yournan.lol.meme">yourmum@yournan.lol.meme</a></p>
-        </footer>
+        <?php
+        phpinfo();
 
-</body>
-</html>
+        $servername = "127.0.0.1";
+        $username = "devuser";
+        $password = "devpass";
+
+        try {
+            $conn = new PDO("mysql:host=$servername:port=9906;dbname=test_db", $username, $password);
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully";
+        } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+        ?>
+
+<?php include("footer.inc"); ?>

@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title> DNS - Quiz </title>
-    <meta charset="UTF-8">
-    <meta name="description" content="DNS Web Site - Quiz">
-    <meta name="keywords" content="dns, quiz">
-    <meta name="author" content="JohnVonNeumann">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <script src="scripts/quiz.js"></script>
-</head>
-
-<body>
-
-    <header>
-        <nav class="menu">
-            <ul>
-                <li class="menu-items">
-                    <a id="index-link" href="index.php"> Home </a>
-                </li>
-                <li class="menu-items">
-                    <a id="topic-link" href="topic.php"> Topic </a>
-                </li>
-                <li class="menu-items">
-                    <a id="enhancements" href="enhancements.html"> Enhancements </a>
-                </li>
-                <li class="menu-items">
-                    <a id="quiz-link" href="quiz.php"> Quiz </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<?php include("header.inc"); ?>
 
     <main>
         <form id="quiz" method="post" action="results.html" novalidate="novalidate">
@@ -121,10 +88,5 @@
         </form>
     </main>
 
-        <footer>
-                <!-- TODO: replace with legit email address -->
-                <p><a href="mailto:yourmum@yournan.lol.meme">yourmum@yournan.lol.meme</a></p>
-        </footer>
-</body>
+<?php include("footer.inc"); ?>
 
-</html>
