@@ -72,6 +72,28 @@
     if ($errMsg != "") {
         echo "<p> $errMsg </p>";
     } else {
+        echo "<section>
+                <h3>Results</h3>
+                <table id='results'>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Student ID</th>
+                            <th>Score</th>
+                            <th>Attempts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id='table-data-name'> </td>
+                            <td id='table-data-student-id'> </td>
+                            <td id='table-data-score'> </td>
+                            <td id='table-data-attempts'> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id='quiz-reattempt'><a href='quiz.php'>Reattempt Quiz!</a></p>
+            </section>";
         echo "<p> Welcome: $first_name $last_name </p>";
         echo "<p> Student Number: $student_number </p>";
         echo "<p> Question 1 Answer: $question_1 </p>";
