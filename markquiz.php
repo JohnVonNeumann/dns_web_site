@@ -29,21 +29,6 @@
         echo "not connected";
     }
 
-    $createTableString = "CREATE TABLES attempts(
-        student_id PRIMARY_KEY )";
-
-    try {
-        $conn = new PDO("mysql:host=$servername", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-
-    $stmt = $conn->prepare("SELECT * FROM mysql;");
-    $stmt->execute();
-
     function sanitise_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
