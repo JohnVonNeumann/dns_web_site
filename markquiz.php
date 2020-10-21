@@ -4,29 +4,27 @@
     require_once "settings.php";
 
     $conn = mysqli_connect($HOST, $USERNAME, $PASSWORD, $DATABASE);
-    if ($conn) {
-        echo "connected";
+    if (! $conn) {
+        die('Could not connect: ' . mysqli_error($conn));
+    } else {
         if (mysqli_select_db($conn, $DATABASE)) {
-            $createTableString = "CREATE TABLE attempts(
-                student_id INT PRIMARY KEY)";
-            $result = mysqli_query($conn, $createTableString);
-            if ($result) {
-                echo "table created";
-            } else {
-                echo "table creation failed";
+            $queryStringDescribeTable = "DESCRIBE attempts;";
+            $tableExists = mysqli_query($conn, $queryStringDescribeTable);
+            if (! $tableExists) {
+                $createTableString = "CREATE TABLE attempts(
+                student_id INT PRIMARY KEY,
+                student_name VARCHAR(50) NOT NULL,
+                score INT)";
+                $result = mysqli_query($conn, $createTableString);
+                if ($result) {
+                    echo "table created";
+                } else {
+                    echo "table creation failed";
+                }
             }
         } else {
             echo "couldnt select db";
         }
-        $query = "SELECT * FROM attempts;";
-        $result = mysqli_query($conn, $query);
-        if ($result) {
-            echo $result;
-        } else {
-            echo "didnt work";
-        }
-    } else {
-        echo "not connected";
     }
 
     function sanitise_input($data) {
@@ -77,7 +75,6 @@
 
     if (isset($_POST["question_5"])) {
         $question_5 = $_POST["question_5"];
-        echo $question_5;
         // the !== false is a weird edge case, it makes for ugly double negation code but
         // strpos doesnt work without it
         // https://stackoverflow.com/a/4366748
