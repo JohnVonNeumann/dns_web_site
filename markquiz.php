@@ -1,6 +1,48 @@
 <?php include("header.inc"); ?>
 
 <?php
+    require_once "settings.php";
+
+    $conn = mysqli_connect($HOST, $USERNAME, $PASSWORD, $DATABASE);
+    if ($conn) {
+        echo "connected";
+        if (mysqli_select_db($conn, $DATABASE)) {
+            $createTableString = "CREATE TABLE attempts(
+                student_id INT PRIMARY KEY)";
+            $result = mysqli_query($conn, $createTableString);
+            if ($result) {
+                echo "table created";
+            } else {
+                echo "table creation failed";
+            }
+        } else {
+            echo "couldnt select db";
+        }
+        $query = "SELECT * FROM attempts;";
+        $result = mysqli_query($conn, $query);
+        if ($result) {
+            echo $result;
+        } else {
+            echo "didnt work";
+        }
+    } else {
+        echo "not connected";
+    }
+
+    $createTableString = "CREATE TABLES attempts(
+        student_id PRIMARY_KEY )";
+
+    try {
+        $conn = new PDO("mysql:host=$servername", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+
+    $stmt = $conn->prepare("SELECT * FROM mysql;");
+    $stmt->execute();
 
     function sanitise_input($data) {
         $data = trim($data);
