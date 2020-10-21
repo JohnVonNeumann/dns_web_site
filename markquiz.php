@@ -24,28 +24,35 @@
     }
     if (isset($_POST["question_1"])) {
         $question_1 = sanitise_input($_POST["question_1"]);
+        if ($question_1 == "Domain Name System") {
+            $score += 1;
+        }
     }
     if (isset($_POST["question_2_answer"]) && $_POST["question_2_answer"] == "It allows hosts to dynamically resolve IP addresses to IPv4 hosts.") {
         $score += 1;
     }
-    $tourArray = [];
 
-    if (isset($_POST["1day"])) {
-        $tourArray[] = "One-day";
-    }
-    if (isset($_POST["4day"])) {
-        $tourArray[] = "Four-day";
-    }
-    if (isset($_POST["10day"])) {
-        $tourArray[] = "Ten-day";
-    }
-    $tour = "";
-    $tourCount = count($tourArray);
-    if ($tourCount != 0) {
-        for ($count = 0; $count < $tourCount; $count++) {
-            $tour .= $tourArray[$count];
+    if (isset($_POST["question_3_answer_1"]) || isset($_POST["question_3_answer_2"]) || isset($_POST["question_3_answer_3"])) {
+        if (isset($_POST["question_3_answer_1"]) && isset($_POST["question_3_answer_2"])) {
+            $score += 1;
         }
     }
+
+    if (isset($_POST["question_4"]) && ($_POST["question_4"] == "false"))  {
+        $score += 1;
+    }
+
+    if (isset($_POST["question_5"])) {
+        $question_5 = $_POST["question_5"];
+        echo $question_5;
+        // the !== false is a weird edge case, it makes for ugly double negation code but
+        // strpos doesnt work without it
+        // https://stackoverflow.com/a/4366748
+        if (strpos($question_5, '1987-11') !== false) {
+            $score += 1;
+        }
+    }
+
 
     $errMsg = "";
 
