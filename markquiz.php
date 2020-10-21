@@ -10,6 +10,7 @@
     }
 
     $score = 0;
+    $errMsg = "";
 
     if (isset($_POST["first_name"])) {
         $first_name = sanitise_input($_POST["first_name"]);
@@ -21,6 +22,11 @@
     }
     if (isset($_POST["student_number"])) {
         $student_number = sanitise_input($_POST["student_number"]);
+        if (is_numeric($student_number)) {
+            if (($student_number < 10 ) || ($student_number > 10000)) {
+                $errMsg .= "<p> Your student_number must be between 10 and 10000 years old. </p>";
+            }
+        }
     }
     if (isset($_POST["question_1"])) {
         $question_1 = sanitise_input($_POST["question_1"]);
@@ -54,8 +60,6 @@
     }
 
 
-    $errMsg = "";
-
     if (($first_name == "") || ($last_name == "")) {
         $errMsg .= "<p> You must enter your first and last name. </p>";
     } else if (!preg_match("/^[a-zA-Z]*$/", $first_name)) {
@@ -64,11 +68,6 @@
         $errMsg .= "<p> Only alpha letters allowed in your last name. </p>";
     }
 
-    if (is_numeric($student_number)) {
-        if (($student_number < 10 ) || ($student_number > 10000)) {
-            $errMsg .= "<p> Your student_number must be between 10 and 10000 years old. </p>";
-        }
-    }
 
     if ($errMsg != "") {
         echo "<p> $errMsg </p>";
