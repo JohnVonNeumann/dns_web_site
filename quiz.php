@@ -1,7 +1,7 @@
 <?php include("header.inc"); ?>
 
     <main>
-        <form id="quiz" method="post" action="results.html" novalidate="novalidate">
+        <form id="quiz" method="post" action="markquiz.php" novalidate="novalidate">
             <fieldset>
                 <legend>
                     <h2>Personal Details: </h2>
