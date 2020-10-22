@@ -44,9 +44,11 @@
     } else {
         header ("location: register.html");
     }
+
     if (isset($_POST["last_name"])) {
         $last_name = sanitise_input($_POST["last_name"]);
     }
+
     if (isset($_POST["student_number"])) {
         $student_number = sanitise_input($_POST["student_number"]);
         if (is_numeric($student_number)) {
@@ -55,6 +57,7 @@
             }
         }
     }
+
     if (isset($_POST["question_1"])) {
         $question_1 = sanitise_input($_POST["question_1"]);
         if ($question_1 == "Domain Name System") {
