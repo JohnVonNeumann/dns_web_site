@@ -4,26 +4,28 @@
     require_once "settings.php";
 
     $conn = mysqli_connect($HOST, $USERNAME, $PASSWORD, $DATABASE);
-    if (! $conn) {
-        die('Could not connect: ' . mysqli_error($conn));
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
     } else {
         if (mysqli_select_db($conn, $DATABASE)) {
             $queryStringDescribeTable = "DESCRIBE attempts;";
-            $tableExists = mysqli_query($conn, $queryStringDescribeTable);
-            if (! $tableExists) {
+            if (!mysqli_query($conn, $queryStringDescribeTable)) {
                 $createTableString = "CREATE TABLE attempts(
-                student_id INT PRIMARY KEY,
-                student_name VARCHAR(50) NOT NULL,
-                score INT)";
+                    attempt_id INT PRIMARY KEY AUTO_INCREMENT,
+                    student_id INT NOT NULL,
+                    date_time VARCHAR(20) NOT NULL,
+                    first_name VARCHAR(20) NOT NULL,
+                    last_name VARCHAR(20) NOT NULL,
+                    attempt_number INT NOT NULL,
+                    score INT NOT NULL)";
                 $result = mysqli_query($conn, $createTableString);
-                if ($result) {
-                    echo "table created";
-                } else {
-                    echo "table creation failed";
+                if (! $result) {
+                    printf("Error Message: %s\n", mysqli_error($conn));
                 }
             }
         } else {
-            echo "couldnt select db";
+            printf("Error Message: %s\n", mysqli_error($conn));
         }
     }
 
