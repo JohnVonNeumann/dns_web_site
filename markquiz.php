@@ -52,9 +52,11 @@
     if (isset($_POST["student_number"])) {
         $student_number = sanitise_input($_POST["student_number"]);
         if (is_numeric($student_number)) {
-            if (($student_number < 10 ) || ($student_number > 10000)) {
-                $errMsg .= "<p> Your student_number must be between 10 and 10000 years old. </p>";
+            if (!preg_match("/^([0-9]{7})$|^([0-9]{10})$/", $student_number)) {
+                $errMsg .= "<p> Your student_number must be either 7 or 10 digits long. </p>";
             }
+        } else {
+            $errMsg .= "<p> Your student number must only be digits. </p>";
         }
     }
 
