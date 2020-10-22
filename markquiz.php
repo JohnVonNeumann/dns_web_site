@@ -41,12 +41,18 @@
 
     if (isset($_POST["first_name"])) {
         $first_name = sanitise_input($_POST["first_name"]);
+        if (!preg_match("/^[a-zA-Z-]{1,25}$/", $first_name)) {
+            $errMsg .= "<p> Your first name can only contain alpha characters, hyphens and must be between 1 and 25 characters. </p>";
+        }
     } else {
         header ("location: register.html");
     }
 
     if (isset($_POST["last_name"])) {
         $last_name = sanitise_input($_POST["last_name"]);
+        if (!preg_match("/^[a-zA-Z-]{1,25}$/", $last_name)) {
+            $errMsg .= "<p> Your last name can only contain alpha characters, hyphens and must be between 1 and 25 characters. </p>";
+        }
     }
 
     if (isset($_POST["student_number"])) {
