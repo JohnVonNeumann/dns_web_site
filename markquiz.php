@@ -79,13 +79,15 @@
             $score += 1;
         }
     } else {
-        $errMsg .= "<p> Your must provide an answer for question two. </p>";
+        $errMsg .= "<p> You must provide an answer for question two. </p>";
     }
 
     if (isset($_POST["question_3_answer_1"]) || isset($_POST["question_3_answer_2"]) || isset($_POST["question_3_answer_3"])) {
         if (isset($_POST["question_3_answer_1"]) && isset($_POST["question_3_answer_2"])) {
             $score += 1;
         }
+    } else {
+        $errMsg .= "<p> You must provide an answer for question three. </p>";
     }
 
     if (isset($_POST["question_4"]) && ($_POST["question_4"] == "false"))  {
