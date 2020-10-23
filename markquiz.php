@@ -142,6 +142,7 @@
                 <p> $errMsg </p>
               </section>";
     } else {
+        $userData = getAttemptDataById($conn, $student_number);
         echo "<section>
                 <h3>Results</h3>
                 <table id='results'>
@@ -155,10 +156,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td id='table-data-name'> </td>
-                            <td id='table-data-student-id'> </td>
-                            <td id='table-data-score'> </td>
-                            <td id='table-data-attempts'> </td>
+                            <td id='table-data-name'> $userData[first_name] $userData[last_name] </td>
+                            <td id='table-data-student-id'> $userData[student_id] </td>
+                            <td id='table-data-score'> $userData[score] </td>
+                            <td id='table-data-attempts'> $userData[attempt_number] </td>
                         </tr>
                     </tbody>
                 </table>
