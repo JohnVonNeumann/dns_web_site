@@ -104,7 +104,10 @@
 
 
     if ($errMsg != "") {
-        echo "<p> $errMsg </p>";
+        echo "<section>
+                <h3>  Uh-Oh! </h3>
+                <p> $errMsg </p>
+              </section>";
     } else {
         echo "<section>
                 <h3>Results</h3>
