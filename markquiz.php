@@ -74,8 +74,12 @@
             $score += 1;
         }
     }
-    if (isset($_POST["question_2_answer"]) && $_POST["question_2_answer"] == "It allows hosts to dynamically resolve IP addresses to IPv4 hosts.") {
-        $score += 1;
+    if (isset($_POST["question_2_answer"])) {
+        if ($_POST["question_2_answer"] == "It allows hosts to dynamically resolve IP addresses to IPv4 hosts.") {
+            $score += 1;
+        }
+    } else {
+        $errMsg .= "<p> Your must provide an answer for question two. </p>";
     }
 
     if (isset($_POST["question_3_answer_1"]) || isset($_POST["question_3_answer_2"]) || isset($_POST["question_3_answer_3"])) {
