@@ -147,14 +147,19 @@
     }
 
 
-    if (createAttempt($conn, $student_number, $first_name, $last_name, $score) == false) {
-        $errMsg .= "<p> You have no more attempts remaining! </p>";
+    if (!$score == 0) {
+        if (createAttempt($conn, $student_number, $first_name, $last_name, $score) == false) {
+            $errMsg .= "<p> You have no more attempts remaining! </p>";
+        }
+    } else {
+        $errMsg .= "<p> Your score is 0. Attempt not submitted. You can do better than that!";
     }
 
     if ($errMsg != "") {
         echo "<section>
                 <h3>  Uh-Oh! </h3>
                 <p> $errMsg </p>
+                <p id='quiz-reattempt'><a href='quiz.php'>Reattempt Quiz!</a></p>
               </section>";
     } else {
         $userData = getAttemptDataById($conn, $student_number);
