@@ -90,8 +90,12 @@
         $errMsg .= "<p> You must provide an answer for question three. </p>";
     }
 
-    if (isset($_POST["question_4"]) && ($_POST["question_4"] == "false"))  {
-        $score += 1;
+    if (isset($_POST["question_4"])) {
+        if ($_POST["question_4"] == "") {
+            $errMsg .= "<p> You must provide an answer for question four. </p>";
+        } else if ($_POST["question_4"] == "false") {
+            $score += 1;
+        }
     }
 
     if (isset($_POST["question_5"])) {
