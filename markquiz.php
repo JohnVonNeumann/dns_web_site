@@ -120,6 +120,18 @@
         return $success;
     }
 
+    function getAttemptDataById($conn, $student_number) {
+        $queryString = "SELECT * FROM attempts WHERE student_id = $student_number ORDER BY attempt_number DESC LIMIT 1;";
+        $result = mysqli_query($conn, $queryString);
+        $row = mysqli_fetch_assoc($result);
+        echo $row["attempt_number"];
+        if (! $result) {
+            printf("error message: %s\n", mysqli_error($conn));
+        }
+        return $row;
+    }
+
+
     if (createAttempt($conn, $student_number, $first_name, $last_name, $score) == false) {
         $errMsg .= "<p> You have no more attempts remaining! </p>";
     }
