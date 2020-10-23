@@ -68,7 +68,9 @@
 
     if (isset($_POST["question_1"])) {
         $question_1 = sanitise_input($_POST["question_1"]);
-        if ($question_1 == "Domain Name System") {
+        if ($question_1 == "") {
+            $errMsg .= "<p> You must provide an answer for question one. </p>";
+        } else if ($question_1 == "Domain Name System") {
             $score += 1;
         }
     }
