@@ -96,19 +96,19 @@
         }
     }
 
-
-    if (($first_name == "") || ($last_name == "")) {
-        $errMsg .= "<p> You must enter your first and last name. </p>";
-    } else if (!preg_match("/^[a-zA-Z]*$/", $first_name)) {
-        $errMsg .= "<p> Only alpha letters allowed in your first name. </p>";
-    } else if (!preg_match("/^[a-zA-Z]*$/", $last_name)) {
-        $errMsg .= "<p> Only alpha letters allowed in your last name. </p>";
+    function getAttemptCountById($conn, $student_number) {
+        $attempts = 0;
+        $queryString = "SELECT * FROM attempts WHERE student_id = $student_number;";
+        $result = mysqli_query($conn, $queryString);
+        echo mysqli_num_rows($result);
+        return $attempts;
     }
 
 
     if ($errMsg != "") {
         echo "<p> $errMsg </p>";
     } else {
+        getAttemptCountById($conn, $student_number);
         echo "<section>
                 <h3>Results</h3>
                 <table id='results'>
