@@ -97,18 +97,15 @@
     }
 
     function getAttemptCountById($conn, $student_number) {
-        $attempts = 0;
         $queryString = "SELECT * FROM attempts WHERE student_id = $student_number;";
         $result = mysqli_query($conn, $queryString);
-        echo mysqli_num_rows($result);
-        return $attempts;
+        return mysqli_num_rows($result);
     }
 
 
     if ($errMsg != "") {
         echo "<p> $errMsg </p>";
     } else {
-        getAttemptCountById($conn, $student_number);
         echo "<section>
                 <h3>Results</h3>
                 <table id='results'>
