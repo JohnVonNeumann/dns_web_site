@@ -103,7 +103,10 @@
         // the !== false is a weird edge case, it makes for ugly double negation code but
         // strpos doesnt work without it
         // https://stackoverflow.com/a/4366748
-        if (strpos($question_5, '1987-11') !== false) {
+        if (strlen($question_5) <= 1) {
+            $errMsg .= "<p> You must provide an answer for question 5. </p>";
+        }
+        else if (strpos($question_5, '1987-11') !== false) {
             $score += 1;
         }
     }
