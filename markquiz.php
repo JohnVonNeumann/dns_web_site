@@ -105,12 +105,9 @@
     function createAttempt($conn, $student_number, $first_name, $last_name, $score) {
         $success = false;
         $dateTime = "" . date("Y-m-d") . date("H-i-s");
-        echo $dateTime;
         $attempt_number = getAttemptCountById($conn, $student_number);
-        echo $attempt_number;
         if ($attempt_number < 3) {
             $attempt_number += 1;
-            echo $attempt_number;
             $queryString = "INSERT INTO 
             attempts(attempt_id, student_id, date_time, first_name, last_name, attempt_number, score)
             VALUES (NULL, $student_number, '$dateTime', '$first_name', '$last_name', $attempt_number, $score);";
@@ -120,7 +117,6 @@
             }
             $success = true;
         }
-
         return $success;
     }
 
