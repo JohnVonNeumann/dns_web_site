@@ -5,7 +5,7 @@
 
     $conn = mysqli_connect($HOST, $USERNAME, $PASSWORD, $DATABASE);
     if (mysqli_connect_errno()) {
-        printf("Connect failed: %s\n", mysqli_connect_error());
+        printf("Connection failed: %s\n", mysqli_connect_error());
         exit();
     } else {
         if (mysqli_select_db($conn, $DATABASE)) {
@@ -128,10 +128,6 @@
                 </table>
                 <p id='quiz-reattempt'><a href='quiz.php'>Reattempt Quiz!</a></p>
             </section>";
-        echo "<p> Welcome: $first_name $last_name </p>";
-        echo "<p> Student Number: $student_number </p>";
-        echo "<p> Question 1 Answer: $question_1 </p>";
-        echo "<p> Score: $score </p>";
     }
 
 
