@@ -1,8 +1,7 @@
 <?php include("header.inc"); ?>
 
 <script>
-    function showUser() {
-        console.log("lol");
+    function listAllAttempts() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -15,7 +14,7 @@
     }
 </script>
 
-<section id="content">
+<section>
     <h3>Results</h3>
     <form>
         <button id="listallattempts" onclick="showUser()"> Hello </button>
