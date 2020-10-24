@@ -67,7 +67,7 @@
                     </legend>
                     <p>
                         <label for="question_4"> Answer: </label>
-                        <select id="question_4" name="question_4" required>
+                        <select id="question_4" name="question_4">
                                                         <option value=""> Please Select </option>
                                                         <option value="true"> True </option>
                                                         <option value="false"> False </option>
@@ -80,7 +80,7 @@
                     </legend>
                     <p>
                         <label for="question_5"> Date: </label>
-                        <input type="date" id="question_5" name="question_4" required="required" />
+                        <input type="date" id="question_5" name="question_5" required="required" />
                     </p>
                 </fieldset>
             </fieldset>
