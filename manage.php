@@ -73,6 +73,19 @@
         xhttp.open("GET", "delete_all_attempts_by_student_id.php?q="+student_id, false);
         xhttp.send();
     }
+
+    function editScoreOfAttemptById(student_id, attempt_number, updated_score) {
+        var data = student_id + " " + attempt_number + " " + updated_score;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Action to be performed when the document is read;
+                document.getElementById("content").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "edit_attempt_score_by_student_id.php?q="+data, false);
+        xhttp.send();
+    }
 </script>
 
 <section>
@@ -94,6 +107,15 @@
         <label for="student_id_delete"> Student ID: </label>
         <input type="text" name="student_id_delete" id="student_id_delete" />
         <button id="deleteattemptsbystudentid" onclick="deleteAllAttemptsById(document.getElementById('student_id_delete').value)"> Delete All attempts by Student ID </button>
+    </p>
+    <p>
+        <label for="student_id_modify"> Student ID: </label>
+        <input type="text" name="student_id_modify" id="student_id_modify" />
+        <label for="attempt_number"> Attempt Number: </label>
+        <input type="text" name="attempt_number" id="attempt_number" />
+        <label for="updated_score"> Updated Score: </label>
+        <input type="text" name="updated_score" id="updated_score" />
+        <button id="modifyattemptsbystudentid" onclick="editScoreOfAttemptById(document.getElementById('student_id_modify').value, document.getElementById('attempt_number').value, document.getElementById('updated_score').value)"> Update attempt score by Student ID </button>
     </p>
     <table id="content"></table>
 </section>
