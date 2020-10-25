@@ -26,6 +26,9 @@
                                 <li class="menu-items">
                                         <a id="quiz" href="quiz.php"> Quiz </a>
                                 </li>
+                                <li class="menu-items">
+                                    <a id="manage" href="manage.php"> Manage </a>
+                                </li>
                         </ul>
                 </nav>
         </header>
