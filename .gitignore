@@ -1,4 +1,7 @@
 # vim files
 *.sw*
 
+#idea
+.idea/
+
 settings.php
