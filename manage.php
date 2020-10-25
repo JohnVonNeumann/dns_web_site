@@ -2,6 +2,7 @@
 
 <script>
     function listAllAttempts() {
+        // https://www.w3schools.com/php/php_ajax_database.asp
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
